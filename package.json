@@ -1,0 +1,32 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^6.9.4",
+    "gh-pages": "^5.0.0",
+    "gsap": "^3.11.4",
+    "three": "^0.150.1"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veeta-orinko/threejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veeta-orinko/threejs/issues"
+  },
+  "homepage": "https://github.com/veeta-orinko/threejs#readme",
+  "description": ""
+}
