@@ -44,7 +44,7 @@ function init() {
   // load the model
   const loader = new GLTFLoader();
   loader.load(
-    "dist/assets/models/melodydefenestratorwhite.glb",
+    "models/melodydefenestratorwhite.glb",
     function (gltf) {
       scene.add(gltf.scene);
       render(); //render the scene for the first time
