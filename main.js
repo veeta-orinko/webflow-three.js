@@ -44,7 +44,7 @@ function init() {
   // load the model
   const loader = new GLTFLoader();
   loader.load(
-    "models/melodydefenestratorwhite.glb",
+    "https://github.com/veeta-orinko/webflow-three.js/blob/main/models/melodydefenestratorwhite.glb?raw=true",
     function (gltf) {
       scene.add(gltf.scene);
       render(); //render the scene for the first time
