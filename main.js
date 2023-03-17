@@ -52,7 +52,7 @@ function init() {
   );
 
   //setup the renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
+  renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas, alpha: true  });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping; //added contrast for filmic look
