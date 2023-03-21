@@ -1,5 +1,4 @@
 import * as THREE from "three";
-
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
@@ -23,12 +22,28 @@ function init() {
   );
   camera.position.set(-1.8, 0.6, 2.7);
 
+  //load and create the environment
+  new RGBELoader()
+    .setDataType(THREE.UnsignedByteType)
+    .load(
+      "https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/equirectangular/royal_esplanade_1k.hdr",
+      function (texture) {
+        const pmremGenerator = new THREE.PMREMGenerator(renderer);
+        pmremGenerator.compileEquirectangularShader();
+
+        scene.background = envMap; //this loads the envMap for the background
+        scene.environment = envMap; //this loads the envMap for reflections and lighting
+
+        pmremGenerator.dispose(); //we processed the image into envMap so we can stop this
+      }
+    );
+
 
     
   // load the model
   const loader = new GLTFLoader();
   loader.load(
-    "models/melodydefenestratorwhite.glb",
+    "https://veeta-orinko.github.io/webflow-three.js/models/melodydefenestratorwhite.glb",
     function (gltf) {
       scene.add(gltf.scene);
       render(); //render the scene for the first time
