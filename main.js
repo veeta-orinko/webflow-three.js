@@ -26,7 +26,7 @@ function init() {
   // load the model
   const loader = new GLTFLoader();
   loader.load(
-    "https://veeta-orinko.github.io/webflow-three.js/models/test2.glb",
+    "https://pub-8f5daad4926a4505b689da801061ae18.r2.dev/test.gltf",
     function (gltf) {
       scene.add(gltf.scene);
       render(); //render the scene for the first time
